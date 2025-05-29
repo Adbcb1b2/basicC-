@@ -1,0 +1,14 @@
+C:\Users\richa\OneDrive - University of Wolverhampton\Documents\University\Summer Learning\basicC#\bin\Debug\net8.0\basicC#.exe
+C:\Users\richa\OneDrive - University of Wolverhampton\Documents\University\Summer Learning\basicC#\bin\Debug\net8.0\basicC#.deps.json
+C:\Users\richa\OneDrive - University of Wolverhampton\Documents\University\Summer Learning\basicC#\bin\Debug\net8.0\basicC#.runtimeconfig.json
+C:\Users\richa\OneDrive - University of Wolverhampton\Documents\University\Summer Learning\basicC#\bin\Debug\net8.0\basicC#.dll
+C:\Users\richa\OneDrive - University of Wolverhampton\Documents\University\Summer Learning\basicC#\bin\Debug\net8.0\basicC#.pdb
+C:\Users\richa\OneDrive - University of Wolverhampton\Documents\University\Summer Learning\basicC#\obj\Debug\net8.0\basicC#.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\richa\OneDrive - University of Wolverhampton\Documents\University\Summer Learning\basicC#\obj\Debug\net8.0\basicC#.AssemblyInfoInputs.cache
+C:\Users\richa\OneDrive - University of Wolverhampton\Documents\University\Summer Learning\basicC#\obj\Debug\net8.0\basicC#.AssemblyInfo.cs
+C:\Users\richa\OneDrive - University of Wolverhampton\Documents\University\Summer Learning\basicC#\obj\Debug\net8.0\basicC#.csproj.CoreCompileInputs.cache
+C:\Users\richa\OneDrive - University of Wolverhampton\Documents\University\Summer Learning\basicC#\obj\Debug\net8.0\basicC#.dll
+C:\Users\richa\OneDrive - University of Wolverhampton\Documents\University\Summer Learning\basicC#\obj\Debug\net8.0\refint\basicC#.dll
+C:\Users\richa\OneDrive - University of Wolverhampton\Documents\University\Summer Learning\basicC#\obj\Debug\net8.0\basicC#.pdb
+C:\Users\richa\OneDrive - University of Wolverhampton\Documents\University\Summer Learning\basicC#\obj\Debug\net8.0\basicC#.genruntimeconfig.cache
+C:\Users\richa\OneDrive - University of Wolverhampton\Documents\University\Summer Learning\basicC#\obj\Debug\net8.0\ref\basicC#.dll
