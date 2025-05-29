@@ -20,6 +20,15 @@ namespace HelloWorld
             Console.WriteLine(true); // = True
             Console.WriteLine(false); // = False
 
+            //// Strings
+            // Escape Character: / 
+            Console.WriteLine("Hello \tAll"); // Tab
+            Console.WriteLine("Hello \n all"); // New line character
+            Console.WriteLine("To include a single slash \\");
+            Console.WriteLine(@"This is a Verbatim string, you \ can 
+                do whatever (almost) you like "); //Verbatim String Literal
+            Console.WriteLine("\u306F\u306b"); // Unicode escape characters
+
 
 
     }
