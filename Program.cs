@@ -16,6 +16,11 @@ namespace HelloWorld
             Console.WriteLine(4.7777); // 15-17 digits, double (default)
             Console.WriteLine(2.4444444444m); //28-29 digits 
 
+            // Boolean 
+            Console.WriteLine(true); // = True
+            Console.WriteLine(false); // = False
+
+
 
     }
   }
