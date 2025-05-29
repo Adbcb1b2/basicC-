@@ -28,6 +28,31 @@ namespace HelloWorld
             Console.WriteLine(@"This is a Verbatim string, you \ can 
                 do whatever (almost) you like "); //Verbatim String Literal
             Console.WriteLine("\u306F\u306b"); // Unicode escape characters
+            // Concatenation
+            string name = "Bob";
+            string message = "Hello " + name;
+            //Interpolation
+            int version = 4;
+            string updateMessage = "Update to version";
+            string interpolationMessage = $"{updateMessage} {version}";
+            Console.WriteLine(interpolationMessage);
+
+            //// Variables
+            // You must declare the datatype fist
+            string firstName;
+            string lastName = "Richards";
+            char userOption;
+            int score;
+            decimal particlesPerMillion;
+            bool userAuthenticated;
+
+            // Implicitly typed local variables
+            var newMessage = "Hello Kim"; // You can then not convert it implicity to another type and they must be intitialised
+
+
+
+
+
 
 
 
