@@ -117,3 +117,43 @@ using System.Diagnostics;
 //     }
 // }
 
+// Uncomment for demonstration of parameters/arguments and return values
+// namespace HelloWorld
+// {
+//     class Program
+//     {
+//         static void Main(string[] args)
+//         {
+//             Random dice = new();
+//             int roll = dice.Next(1, 6); // Return a value in a variable
+//             Console.WriteLine("" + roll); // Print the return value
+
+//             Console.WriteLine(dice.Next(7, 10));
+
+//         }
+
+
+//     }
+// }
+
+namespace HelloWorld
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int firstValue = 800;
+            int secondValue = 1000;
+
+            int largerValue;
+
+            // Use Max Method of the System.Math class to determine the higher value
+            largerValue = System.Math.Max(firstValue, secondValue);
+            
+            // Print the larger value. Output should be 1000;
+            Console.WriteLine("The larger value is:" + largerValue);
+            Console.WriteLine($"Larger Value {largerValue}");
+            
+        }
+    }
+}
