@@ -103,7 +103,9 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-
+            Random dice = new Random();
+            int roll = dice.Next(1, 7); // Random dice roll, 1-7
+            Console.WriteLine("You rolled a: " + roll); // Output dice roll
         }
     }
 }
