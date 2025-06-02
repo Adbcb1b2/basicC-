@@ -159,58 +159,59 @@ using System.Diagnostics;
 //     }
 // }
 
-// Uncomment for if statement examples
-namespace HelloWorld
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            Random dice = new();
+// // Uncomment for if statement examples
+// namespace HelloWorld
+// {
+//     class Program
+//     {
+//         static void Main(string[] args)
+//         {
+//             Random dice = new();
 
-            // Generate 3 random numbers
-            int roll1 = dice.Next(1, 7);
-            int roll2 = dice.Next(1, 7);
-            int roll3 = dice.Next(1, 7);
+//             // Generate 3 random numbers
+//             int roll1 = dice.Next(1, 7);
+//             int roll2 = dice.Next(1, 7);
+//             int roll3 = dice.Next(1, 7);
 
-            // Sum the generated random numbers
-            int total = roll1 + roll2 + roll3;
+//             // Sum the generated random numbers
+//             int total = roll1 + roll2 + roll3;
 
-            // Output the random numbers and the sum
-            Console.WriteLine($"Dice Roll: {roll1} + {roll2} + {roll3} = {total}");
+//             // Output the random numbers and the sum
+//             Console.WriteLine($"Dice Roll: {roll1} + {roll2} + {roll3} = {total}");
 
-            // Get 2 extra points if 2 of your dice rolls are equal
-            if ((roll1 == roll2) || (roll2 == roll3) || (roll3 == roll1))
-            {
-                Console.WriteLine("You rolled doubles!!!");
-                total += 2;
-            }
+//             // Get 2 extra points if 2 of your dice rolls are equal
+//             if ((roll1 == roll2) || (roll2 == roll3) || (roll3 == roll1))
+//             {
+//                 Console.WriteLine("You rolled doubles!!!");
+//                 total += 2;
+//             }
 
-            // Get 6 extra points if all 3 of your dice rolls are equal
-            if ((roll1 == roll2) && (roll2 == roll3))
-            {
-                Console.WriteLine("You rolled tripples!");
-                total += 3;
-            }
+//             // Get 6 extra points if all 3 of your dice rolls are equal
+//             if ((roll1 == roll2) && (roll2 == roll3))
+//             {
+//                 Console.WriteLine("You rolled tripples!");
+//                 total += 3;
+//             }
 
-            // Create a win/lose feature depending on the random numbers generated
-            if (total > 14)
-            {
-                Console.WriteLine("You win!");
-            }
+//             // Create a win/lose feature depending on the random numbers generated
+//             if (total > 14)
+//             {
+//                 Console.WriteLine("You win!");
+//             }
 
 
-            string message = "I went to the shop earlier"; // Define a message 
-            bool result = message.Contains("dog"); // False. Boolean expressions can also be created using operator e.g. ==, >, <, >=, <= etc.
-            Console.WriteLine("" + result);
+//             string message = "I went to the shop earlier"; // Define a message 
+//             bool result = message.Contains("dog"); // False. Boolean expressions can also be created using operator e.g. ==, >, <, >=, <= etc.
+//             Console.WriteLine("" + result);
 
-            // Using a boolean expression in an if statement
-            if (message.Contains("shop"))
-            {
-                Console.WriteLine("The message contains the word shop!");
-            }
+//             // Using a boolean expression in an if statement
+//             if (message.Contains("shop"))
+//             {
+//                 Console.WriteLine("The message contains the word shop!");
+//             }
 
-        }
-    }
-}
+//         }
+//     }
+// }
+
 
