@@ -368,3 +368,59 @@ using System.Diagnostics;
 //         }
 //     }
 // }
+
+// Coding Challenge - Improve renewal rate of subsciptions. 
+// Display a renewal message when a user logs into the software system and is notified their subscription will soon end
+namespace HelloWorld
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Create an instance of the random class 
+            Random random = new();
+
+            // Create a random number for days until subscription ends 0 - 11
+            int daysUntilExpiration = random.Next(1,11);
+
+            // Create a variable to hold the discount percentage, default 0
+            int discountPercentage = 0;
+
+
+            // Display one message dependent on one of the 5 rules. 
+            // Rule 1: For rules 2-6, the higher numbered rules take precedence over the lower numbered rules 
+            // Rule 2: If the user's subscription will expire in 10 days or less, display the message "Your subscription will expire soon. Renew now!"
+            // Rule 3: If the user's subscription will expire in five days or less, display the messages "Your subscription expires in _ days. \n Renew now and save 10%!"
+            // Rule 4: If the user's subscription will expire in one day, display "Your subscription expires within a day! Renew now and save 20%!"
+            // Rule 5: If the user's subscription has expired, display the message "Your subscription has expired."
+            // Rule 6: If the user's subscription doesn't expire within 10 days, display nothing. 
+
+            // Console.WriteLine($"Your subscription expires in {daysUntilExpiration} days!");
+
+            if (daysUntilExpiration <= 10) // Rule 6
+            {
+                // Implement logic
+                if (daysUntilExpiration <= 0)
+                {
+                    Console.WriteLine("Your subscription has expired!"); // Rule 5
+                }
+                else if (daysUntilExpiration == 1)
+                {
+                    discountPercentage = 20;
+                    Console.WriteLine($"Your subscription expires within a day! Renew now and save {discountPercentage}%!"); // Rule 4
+                }
+                else if (daysUntilExpiration <= 5)
+                {
+                    discountPercentage = 10;
+                    Console.WriteLine($"Your subscription expires in {daysUntilExpiration} days!"); // Rule 3
+                    Console.WriteLine($"Renew now and save {discountPercentage}%!");
+                }
+                else
+                {
+                    Console.WriteLine("Your subscription will expire soon!"); // Rule 2
+                }
+            }
+
+        }
+    }
+}
