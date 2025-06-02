@@ -136,24 +136,25 @@ using System.Diagnostics;
 //     }
 // }
 
-namespace HelloWorld
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            int firstValue = 800;
-            int secondValue = 1000;
+// Uncomment for Math class implementation
+// namespace HelloWorld
+// {
+//     class Program
+//     {
+//         static void Main(string[] args)
+//         {
+//             int firstValue = 800;
+//             int secondValue = 1000;
 
-            int largerValue;
+//             int largerValue;
 
-            // Use Max Method of the System.Math class to determine the higher value
-            largerValue = System.Math.Max(firstValue, secondValue);
-            
-            // Print the larger value. Output should be 1000;
-            Console.WriteLine("The larger value is:" + largerValue);
-            Console.WriteLine($"Larger Value {largerValue}");
-            
-        }
-    }
-}
+//             // Use Max Method of the System.Math class to determine the higher value
+//             largerValue = System.Math.Max(firstValue, secondValue);
+
+//             // Print the larger value. Output should be 1000;
+//             Console.WriteLine("The larger value is:" + largerValue);
+//             Console.WriteLine($"Larger Value {largerValue}");
+
+//         }
+//     }
+// }
