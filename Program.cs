@@ -214,4 +214,52 @@ using System.Diagnostics;
 //     }
 // }
 
+// Uncomment for IF/ELSE statement examples
+namespace HelloWorld
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Create an instance of the Random class
+            Random dice = new();
+
+            // Generate 3 random dice rolls
+            int roll1 = dice.Next(1, 7);
+            int roll2 = dice.Next(1, 7);
+            int roll3 = dice.Next(1, 7);
+
+            // Total the three randomly generated numbers
+            int total = roll1 + roll2 + roll3;
+
+            // Output the random numbers and the total
+            Console.WriteLine($"{roll1} + {roll2} + {roll3} = {total}");
+
+            // Bonus points for doubles/triples
+            if ((roll1 == roll2) || (roll2 == roll3) || (roll1 == roll3))
+            {
+                Console.WriteLine("You rolled doubles!  +2 bonus to total!");
+                total += 2;
+            }
+
+            if ((roll1 == roll2) && (roll2 == roll3))
+            {
+                Console.WriteLine("You rolled triples!  +6 bonus to total!");
+                total += 6;
+            }
+
+
+            // IF/Else statement example
+            if (total >= 15)
+            {
+                Console.WriteLine("You win!");
+            }
+            else
+            {
+                Console.WriteLine("Sorry, you lose");
+            }
+
+        }
+    }
+}
 
