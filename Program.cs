@@ -263,55 +263,55 @@ using System.Diagnostics;
 //     }
 // }
 
-// Uncomment for nested if/else example
-namespace HelloWorld
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            Random dice = new();
+// // Uncomment for nested if/else example
+// namespace HelloWorld
+// {
+//     class Program
+//     {
+//         static void Main(string[] args)
+//         {
+//             Random dice = new();
 
-            // Generate three random numbers
-            int roll1 = dice.Next(1, 7);
-            int roll2 = dice.Next(1, 7);
-            int roll3 = dice.Next(1, 7);
+//             // Generate three random numbers
+//             int roll1 = dice.Next(1, 7);
+//             int roll2 = dice.Next(1, 7);
+//             int roll3 = dice.Next(1, 7);
 
-            // Total the three generated random numbers
-            int total = roll1 + roll2 + roll3;
+//             // Total the three generated random numbers
+//             int total = roll1 + roll2 + roll3;
 
-            // Output the 3 random numbers and their total
-            Console.WriteLine($"{roll1} + {roll2} + {roll3}");
+//             // Output the 3 random numbers and their total
+//             Console.WriteLine($"{roll1} + {roll2} + {roll3}");
 
-            // Nested IF/ELSE statement
-            // If doubles are rolled, there's possiblity tripes may have been to
-            if ((roll1 == roll2) || (roll1 == roll3) || roll2 == roll3)
-            {
-                // Check if triples have also been rolled
-                if ((roll1 == roll2) && (roll2 == roll3))
-                {
-                    Console.WriteLine("You rolled tripples!");
-                }
-                else // If they havent, doubles have been rolled
-                {
-                    Console.WriteLine("You've rolled doubles!");
-                }
-            }
-            else
-            {
-                Console.WriteLine("You didn't roll doubles or triples - no bonus points for you!");
-            }
+//             // Nested IF/ELSE statement
+//             // If doubles are rolled, there's possiblity tripes may have been to
+//             if ((roll1 == roll2) || (roll1 == roll3) || roll2 == roll3)
+//             {
+//                 // Check if triples have also been rolled
+//                 if ((roll1 == roll2) && (roll2 == roll3))
+//                 {
+//                     Console.WriteLine("You rolled tripples!");
+//                 }
+//                 else // If they havent, doubles have been rolled
+//                 {
+//                     Console.WriteLine("You've rolled doubles!");
+//                 }
+//             }
+//             else
+//             {
+//                 Console.WriteLine("You didn't roll doubles or triples - no bonus points for you!");
+//             }
 
-            if (total >= 15)
-            {
-                Console.WriteLine("You win!!");
-            }
-            else
-            {
-                Console.WriteLine("You lose!!");
-            }
+//             if (total >= 15)
+//             {
+//                 Console.WriteLine("You win!!");
+//             }
+//             else
+//             {
+//                 Console.WriteLine("You lose!!");
+//             }
 
             
-        }
-    }
-}
+//         }
+//     }
+// }
