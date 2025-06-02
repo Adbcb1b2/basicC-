@@ -381,7 +381,8 @@ namespace HelloWorld
             Random random = new();
 
             // Create a random number for days until subscription ends 0 - 11
-            int daysUntilExpiration = random.Next(1,11);
+            //int daysUntilExpiration = random.Next(1, 11);
+            int daysUntilExpiration = 4;
 
             // Create a variable to hold the discount percentage, default 0
             int discountPercentage = 0;
@@ -407,19 +408,25 @@ namespace HelloWorld
                 else if (daysUntilExpiration == 1)
                 {
                     discountPercentage = 20;
-                    Console.WriteLine($"Your subscription expires within a day! Renew now and save {discountPercentage}%!"); // Rule 4
+                    Console.WriteLine($"Your subscription expires within a day!"); // Rule 4        
                 }
                 else if (daysUntilExpiration <= 5)
                 {
                     discountPercentage = 10;
                     Console.WriteLine($"Your subscription expires in {daysUntilExpiration} days!"); // Rule 3
-                    Console.WriteLine($"Renew now and save {discountPercentage}%!");
+
                 }
                 else
                 {
-                    Console.WriteLine("Your subscription will expire soon!"); // Rule 2
+                    Console.WriteLine("Your subscription will expire soon! Renew now!"); // Rule 2
                 }
             }
+
+            if (discountPercentage > 0)
+            {
+                Console.WriteLine($"Renew now and save {discountPercentage}%!");
+            }
+            
 
         }
     }
