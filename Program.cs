@@ -16,18 +16,18 @@ using System.Diagnostics;
 //             // Floats
 //             Console.WriteLine(2.5F); // 6-9 digits
 //             Console.WriteLine(4.7777); // 15-17 digits, double (default)
-//             Console.WriteLine(2.4444444444m); //28-29 digits 
+//             Console.WriteLine(2.4444444444m); //28-29 digits
 
-//             // Boolean 
+//             // Boolean
 //             Console.WriteLine(true); // = True
 //             Console.WriteLine(false); // = False
 
 //             //// Strings
-//             // Escape Character: / 
+//             // Escape Character: /
 //             Console.WriteLine("Hello \tAll"); // Tab
 //             Console.WriteLine("Hello \n all"); // New line character
 //             Console.WriteLine("To include a single slash \\");
-//             Console.WriteLine(@"This is a Verbatim string, you \ can 
+//             Console.WriteLine(@"This is a Verbatim string, you \ can
 //                 do whatever (almost) you like "); //Verbatim String Literal
 //             Console.WriteLine("\u306F\u306b"); // Unicode escape characters
 //             // Concatenation
@@ -106,7 +106,7 @@ using System.Diagnostics;
 //         {
 //             //Random dice = new Random(); // Create an instance of the random class
 //             Random dice = new(); // Latest version of .NET runtime allows you to not repeat the class name, simplifies readability
-//             // Random class captures the date/time down to a fraction of a millisecond, and uses it to seed an alogirthm that produces a different number each time. 
+//             // Random class captures the date/time down to a fraction of a millisecond, and uses it to seed an alogirthm that produces a different number each time.
 //             int roll = dice.Next(1, 7); // Random dice roll, 1-7
 //             Console.WriteLine("You rolled a: " + roll); // Output dice roll
 
@@ -200,7 +200,7 @@ using System.Diagnostics;
 //             }
 
 
-//             string message = "I went to the shop earlier"; // Define a message 
+//             string message = "I went to the shop earlier"; // Define a message
 //             bool result = message.Contains("dog"); // False. Boolean expressions can also be created using operator e.g. ==, >, <, >=, <= etc.
 //             Console.WriteLine("" + result);
 
@@ -214,52 +214,104 @@ using System.Diagnostics;
 //     }
 // }
 
-// Uncomment for IF/ELSE statement examples
+// // Uncomment for IF/ELSE statement examples
+// namespace HelloWorld
+// {
+//     class Program
+//     {
+//         static void Main(string[] args)
+//         {
+//             // Create an instance of the Random class
+//             Random dice = new();
+
+//             // Generate 3 random dice rolls
+//             int roll1 = dice.Next(1, 7);
+//             int roll2 = dice.Next(1, 7);
+//             int roll3 = dice.Next(1, 7);
+
+//             // Total the three randomly generated numbers
+//             int total = roll1 + roll2 + roll3;
+
+//             // Output the random numbers and the total
+//             Console.WriteLine($"{roll1} + {roll2} + {roll3} = {total}");
+
+//             // Bonus points for doubles/triples
+//             if ((roll1 == roll2) || (roll2 == roll3) || (roll1 == roll3))
+//             {
+//                 Console.WriteLine("You rolled doubles!  +2 bonus to total!");
+//                 total += 2;
+//             }
+
+//             if ((roll1 == roll2) && (roll2 == roll3))
+//             {
+//                 Console.WriteLine("You rolled triples!  +6 bonus to total!");
+//                 total += 6;
+//             }
+
+
+//             // IF/Else statement example
+//             if (total >= 15)
+//             {
+//                 Console.WriteLine("You win!");
+//             }
+//             else
+//             {
+//                 Console.WriteLine("Sorry, you lose");
+//             }
+
+//         }
+//     }
+// }
+
+// Uncomment for nested if/else example
 namespace HelloWorld
 {
     class Program
     {
         static void Main(string[] args)
         {
-            // Create an instance of the Random class
             Random dice = new();
 
-            // Generate 3 random dice rolls
+            // Generate three random numbers
             int roll1 = dice.Next(1, 7);
             int roll2 = dice.Next(1, 7);
             int roll3 = dice.Next(1, 7);
 
-            // Total the three randomly generated numbers
+            // Total the three generated random numbers
             int total = roll1 + roll2 + roll3;
 
-            // Output the random numbers and the total
-            Console.WriteLine($"{roll1} + {roll2} + {roll3} = {total}");
+            // Output the 3 random numbers and their total
+            Console.WriteLine($"{roll1} + {roll2} + {roll3}");
 
-            // Bonus points for doubles/triples
-            if ((roll1 == roll2) || (roll2 == roll3) || (roll1 == roll3))
+            // Nested IF/ELSE statement
+            // If doubles are rolled, there's possiblity tripes may have been to
+            if ((roll1 == roll2) || (roll1 == roll3) || roll2 == roll3)
             {
-                Console.WriteLine("You rolled doubles!  +2 bonus to total!");
-                total += 2;
-            }
-
-            if ((roll1 == roll2) && (roll2 == roll3))
-            {
-                Console.WriteLine("You rolled triples!  +6 bonus to total!");
-                total += 6;
-            }
-
-
-            // IF/Else statement example
-            if (total >= 15)
-            {
-                Console.WriteLine("You win!");
+                // Check if triples have also been rolled
+                if ((roll1 == roll2) && (roll2 == roll3))
+                {
+                    Console.WriteLine("You rolled tripples!");
+                }
+                else // If they havent, doubles have been rolled
+                {
+                    Console.WriteLine("You've rolled doubles!");
+                }
             }
             else
             {
-                Console.WriteLine("Sorry, you lose");
+                Console.WriteLine("You didn't roll doubles or triples - no bonus points for you!");
             }
 
+            if (total >= 15)
+            {
+                Console.WriteLine("You win!!");
+            }
+            else
+            {
+                Console.WriteLine("You lose!!");
+            }
+
+            
         }
     }
 }
-
