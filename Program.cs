@@ -103,9 +103,15 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-            Random dice = new Random();
+            //Random dice = new Random(); // Create an instance of the random class
+            Random dice = new(); // Latest version of .NET runtime allows you to not repeat the class name, simplifies readability
+            // Random class captures the date/time down to a fraction of a millisecond, and uses it to seed an alogirthm that produces a different number each time. 
             int roll = dice.Next(1, 7); // Random dice roll, 1-7
             Console.WriteLine("You rolled a: " + roll); // Output dice roll
+
+            // int result = Random.Next(); // Next() is a stateless object, so it won't allow you to use it wihthout an object
+            roll = dice.Next(); // A stateful method does not necessarily need a parameter
+            Console.WriteLine("Your new random number is: " + roll);
         }
     }
 }
