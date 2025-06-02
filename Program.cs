@@ -158,3 +158,28 @@ using System.Diagnostics;
 //         }
 //     }
 // }
+
+// Uncomment for example of adding 3 random numbers
+namespace HelloWorld
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Random dice = new();
+
+            // Generate 3 random numbers
+            int roll1 = dice.Next(1, 7);
+            int roll2 = dice.Next(1, 7);
+            int roll3 = dice.Next(1, 7);
+
+            // Sum the generated random numbers
+            int total = roll1 + roll2 + roll3;
+
+            // Output the random numbers and the sum
+            Console.WriteLine($"Dice Roll: {roll1} + {roll2} + {roll3} = {total}");
+
+        }
+    }
+}
+
