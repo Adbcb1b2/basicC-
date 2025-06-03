@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
+using System.Runtime.CompilerServices;
 
 // Uncomment for simple C# Syntax
 // namespace HelloWorld
@@ -526,3 +527,125 @@ using System.Diagnostics.CodeAnalysis;
 //         }
 //     }
 // }
+
+// Uncomment for foreach and if-elseif-else example
+namespace HelloWorld
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int currentAssignmentCount = 5;
+
+            int[] sophiaGrades = [90, 86, 87, 98, 100, 94, 90];
+            int[] kimGrades = [92, 89, 81, 96, 90, 89];
+            int[] jamesGrades = [90, 85, 87, 98, 68, 89, 89, 89];
+            int[] pippaGrades = [90, 95, 87, 88, 96, 96];
+
+            string[] studentNames = ["Sophia", "Kim", "James", "Pippa"];
+
+            int[] studentScores = new int[10];
+
+            string currentStudentLetterGrade = "";
+
+            // Report Header
+            Console.WriteLine("Student\t\tGrade\t\tLetter Grade\n");
+
+            // Iterate through the student names array
+            foreach (string name in studentNames)
+            {
+                string currentStudent = name;
+
+                if (currentStudent == "Sophia")
+                {
+                    studentScores = sophiaGrades;
+                }
+                else if (currentStudent == "Kim")
+                {
+                    studentScores = kimGrades;
+                }
+                else if (currentStudent == "James")
+                {
+                    studentScores = jamesGrades;
+                }
+                else if (currentStudent == "Pippa")
+                {
+                    studentScores = pippaGrades;
+                }
+                
+                // Initialise/reset the sum of the scores
+                int sumAssignmentScore = 0;
+
+                // Initialise/reset the calculated average of exam + extra credit scores
+                decimal currentStudentGrade = 0;
+
+                int arrayElementID = 0;
+                // Iterate through current student's grades to calculate the sum
+                foreach (int grade in studentScores)
+                {
+                    // Test - Console.WriteLine(grade + " ");
+
+                    arrayElementID+=1;
+
+                    if (arrayElementID <= currentAssignmentCount)
+                    {
+                        sumAssignmentScore += grade;
+                    }
+                    else
+                    {
+                        sumAssignmentScore += grade / 10;
+                    }
+                }
+
+                // Calculate the average of the student's scores
+                currentStudentGrade = (decimal)sumAssignmentScore / currentAssignmentCount;
+
+                if (currentStudentGrade >= 97)
+                    currentStudentLetterGrade = "A+";
+
+                else if (currentStudentGrade >= 93)
+                    currentStudentLetterGrade = "A";
+
+                else if (currentStudentGrade >= 90)
+                    currentStudentLetterGrade = "A-";
+
+                else if (currentStudentGrade >= 87)
+                    currentStudentLetterGrade = "B+";
+
+                else if (currentStudentGrade >= 83)
+                    currentStudentLetterGrade = "B";
+
+                else if (currentStudentGrade >= 80)
+                    currentStudentLetterGrade = "B-";
+
+                else if (currentStudentGrade >= 77)
+                    currentStudentLetterGrade = "C+";
+
+                else if (currentStudentGrade >= 73)
+                    currentStudentLetterGrade = "C";
+
+                else if (currentStudentGrade >= 70)
+                    currentStudentLetterGrade = "C-";
+
+                else if (currentStudentGrade >= 67)
+                    currentStudentLetterGrade = "D+";
+
+                else if (currentStudentGrade >= 63)
+                    currentStudentLetterGrade = "D";
+
+                else if (currentStudentGrade >= 60)
+                    currentStudentLetterGrade = "D-";
+
+                else
+                    currentStudentLetterGrade = "F";
+
+                Console.WriteLine($"{name}\t\t{currentStudentGrade}\t\t{currentStudentLetterGrade}\t");
+
+            }
+
+            Console.WriteLine("Press the Enter key to continue");
+            Console.ReadLine();
+
+        }
+    }
+}
