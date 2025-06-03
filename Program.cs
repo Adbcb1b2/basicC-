@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 
 // Uncomment for simple C# Syntax
 // namespace HelloWorld
@@ -369,65 +370,159 @@ using System.Diagnostics;
 //     }
 // }
 
-// Coding Challenge - Improve renewal rate of subsciptions. 
-// Display a renewal message when a user logs into the software system and is notified their subscription will soon end
-namespace HelloWorld
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            // Create an instance of the random class 
-            Random random = new();
+// // Coding Challenge - Improve renewal rate of subsciptions. 
+// // Display a renewal message when a user logs into the software system and is notified their subscription will soon end
+// namespace HelloWorld
+// {
+//     class Program
+//     {
+//         static void Main(string[] args)
+//         {
+//             // Create an instance of the random class 
+//             Random random = new();
 
-            // Create a random number for days until subscription ends 0 - 11
-            //int daysUntilExpiration = random.Next(1, 11);
-            int daysUntilExpiration = 4;
+//             // Create a random number for days until subscription ends 0 - 11
+//             //int daysUntilExpiration = random.Next(1, 11);
+//             int daysUntilExpiration = 4;
 
-            // Create a variable to hold the discount percentage, default 0
-            int discountPercentage = 0;
+//             // Create a variable to hold the discount percentage, default 0
+//             int discountPercentage = 0;
 
 
-            // Display one message dependent on one of the 5 rules. 
-            // Rule 1: For rules 2-6, the higher numbered rules take precedence over the lower numbered rules 
-            // Rule 2: If the user's subscription will expire in 10 days or less, display the message "Your subscription will expire soon. Renew now!"
-            // Rule 3: If the user's subscription will expire in five days or less, display the messages "Your subscription expires in _ days. \n Renew now and save 10%!"
-            // Rule 4: If the user's subscription will expire in one day, display "Your subscription expires within a day! Renew now and save 20%!"
-            // Rule 5: If the user's subscription has expired, display the message "Your subscription has expired."
-            // Rule 6: If the user's subscription doesn't expire within 10 days, display nothing. 
+//             // Display one message dependent on one of the 5 rules. 
+//             // Rule 1: For rules 2-6, the higher numbered rules take precedence over the lower numbered rules 
+//             // Rule 2: If the user's subscription will expire in 10 days or less, display the message "Your subscription will expire soon. Renew now!"
+//             // Rule 3: If the user's subscription will expire in five days or less, display the messages "Your subscription expires in _ days. \n Renew now and save 10%!"
+//             // Rule 4: If the user's subscription will expire in one day, display "Your subscription expires within a day! Renew now and save 20%!"
+//             // Rule 5: If the user's subscription has expired, display the message "Your subscription has expired."
+//             // Rule 6: If the user's subscription doesn't expire within 10 days, display nothing. 
 
-            // Console.WriteLine($"Your subscription expires in {daysUntilExpiration} days!");
+//             // Console.WriteLine($"Your subscription expires in {daysUntilExpiration} days!");
 
-            if (daysUntilExpiration <= 10) // Rule 6
-            {
-                // Implement logic
-                if (daysUntilExpiration <= 0)
-                {
-                    Console.WriteLine("Your subscription has expired!"); // Rule 5
-                }
-                else if (daysUntilExpiration == 1)
-                {
-                    discountPercentage = 20;
-                    Console.WriteLine($"Your subscription expires within a day!"); // Rule 4        
-                }
-                else if (daysUntilExpiration <= 5)
-                {
-                    discountPercentage = 10;
-                    Console.WriteLine($"Your subscription expires in {daysUntilExpiration} days!"); // Rule 3
+//             if (daysUntilExpiration <= 10) // Rule 6
+//             {
+//                 // Implement logic
+//                 if (daysUntilExpiration <= 0)
+//                 {
+//                     Console.WriteLine("Your subscription has expired!"); // Rule 5
+//                 }
+//                 else if (daysUntilExpiration == 1)
+//                 {
+//                     discountPercentage = 20;
+//                     Console.WriteLine($"Your subscription expires within a day!"); // Rule 4        
+//                 }
+//                 else if (daysUntilExpiration <= 5)
+//                 {
+//                     discountPercentage = 10;
+//                     Console.WriteLine($"Your subscription expires in {daysUntilExpiration} days!"); // Rule 3
 
-                }
-                else
-                {
-                    Console.WriteLine("Your subscription will expire soon! Renew now!"); // Rule 2
-                }
-            }
+//                 }
+//                 else
+//                 {
+//                     Console.WriteLine("Your subscription will expire soon! Renew now!"); // Rule 2
+//                 }
+//             }
 
-            if (discountPercentage > 0)
-            {
-                Console.WriteLine($"Renew now and save {discountPercentage}%!");
-            }
-            
+//             if (discountPercentage > 0)
+//             {
+//                 Console.WriteLine($"Renew now and save {discountPercentage}%!");
+//             }
+//         }
+//     }
+// }
 
-        }
-    }
-}
+// // Uncomment for array examples
+// namespace HelloWorld
+// {
+//     class Program
+//     {
+//         static void Main(string[] args)
+//         {
+
+//             // To declare an array, you must declare the type and the size 
+//             string[] fraudulentOrderIDs = new string[3];
+
+//             // Assigning values to an array
+//             fraudulentOrderIDs[0] = "A665";  // First element is 0
+//             fraudulentOrderIDs[1] = "B432";
+//             fraudulentOrderIDs[2] = "J451";
+
+//             // Could also do the above like this string[] fraudulentOrderIDs = [ "A123", "B456", "C789" ];
+
+//             // Retrieving values from elements in an array
+//             string[] orderIDs = new string[3];
+//             orderIDs[0] = "124C";
+//             orderIDs[1] = "224B";
+//             orderIDs[2] = "154F";
+
+//             // Accessing the first element of the array
+//             Console.WriteLine($"First element of the array: {orderIDs[0]}");
+
+//             // Accessing the last element of the array
+//             Console.WriteLine($"Last element of the array: {orderIDs[2]}");
+
+//             // Reassingning the value of an array
+//             orderIDs[0] = "F000";
+//             Console.WriteLine($"Reassigned First Element = {orderIDs[0]}");
+
+//             // The length property of an array
+//             Console.WriteLine($"There are {fraudulentOrderIDs.Length} fraudulent orders");
+
+//             // Looping through an array
+//             string[] names = ["Kim", "Bob", "Brian"];
+//             foreach (string name in names)
+//             {
+//                 Console.WriteLine(name); // Will iterate through each element of the array and print the line
+//             }
+
+//             // You can have different types of an array:
+//             int[] pictureUnitsRemainingPerType = [500, 20, 30, 1, 12];
+//             int sum = 0; // Initialise sum variable
+
+//             // Calculate the total number of units
+//             foreach (int pictureType in pictureUnitsRemainingPerType)
+//             {
+//                 sum += pictureType;
+
+//             }
+
+//             // Output the total   
+//             Console.WriteLine("Total amount of units: " + sum);
+
+//             // Creating a variable to hold the current iteration
+//             int[] inventory = [200, 250, 700, 175, 250];
+//             int total = 0;
+//             int bin = 0;
+
+//             foreach (int items in inventory)
+//             {
+//                 total += items;
+//                 bin++;
+//                 Console.WriteLine($"Bin Number (iteration number) {bin} has {items}. The running total is {total} items");
+//             }
+
+//         }
+//     }
+// }
+
+// // Uncomment for Fraudulent Order Challenge
+// namespace HelloWorld
+// {
+//     class Program
+//     {
+//         static void Main(string[] args)
+//         {
+//             string[] fraudulentOrderIDs = { "B123", "C234", "A345", "C15", "B177", "G3003", "C235", "B179" };
+//             int iterationID = 0;
+
+//             foreach (string fraudulentOrderID in fraudulentOrderIDs)
+//             {
+//                 if (fraudulentOrderID.StartsWith("B"))
+//                 {
+//                     Console.WriteLine($"The order at position {iterationID} is fradulent: {fraudulentOrderID}");
+//                 }
+//                 iterationID++;
+//             }
+//         }
+//     }
+// }
