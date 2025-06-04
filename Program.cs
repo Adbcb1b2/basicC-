@@ -549,7 +549,7 @@ namespace HelloWorld
             string currentStudentLetterGrade = "";
 
             // Report Header
-            Console.WriteLine("Student\t\tGrade\t\tLetter Grade\n");
+            Console.WriteLine("Student\t\tGrade\t\tFinal Score\tGrade\t\tExtra Credit\n");
 
             // Iterate through the student names array
             foreach (string name in studentNames)
@@ -575,17 +575,24 @@ namespace HelloWorld
                 
                 // Initialise/reset the sum of the scores
                 int sumAssignmentScore = 0;
+                int sumExtraAssignmentScore = 0;
 
                 // Initialise/reset the calculated average of exam + extra credit scores
                 decimal currentStudentGrade = 0;
+                decimal extraCreditPoints = 0;
 
+                // To keep track of which element of the array is being processed
                 int arrayElementID = 0;
+
+                // To keep track of how many extra credit values there are
+                int extraCreditValues = 0;
+                
                 // Iterate through current student's grades to calculate the sum
                 foreach (int grade in studentScores)
                 {
                     // Test - Console.WriteLine(grade + " ");
 
-                    arrayElementID+=1;
+                    arrayElementID += 1;
 
                     if (arrayElementID <= currentAssignmentCount)
                     {
@@ -593,53 +600,61 @@ namespace HelloWorld
                     }
                     else
                     {
-                        sumAssignmentScore += grade / 10;
+                        sumExtraAssignmentScore += grade;
+                        extraCreditValues++;
                     }
                 }
 
-                // Calculate the average of the student's scores
+                // Calculate the average of the student's scores - without accounting for extra credits
                 currentStudentGrade = (decimal)sumAssignmentScore / currentAssignmentCount;
 
-                if (currentStudentGrade >= 97)
+                // Calculate extra credit points earned as 10% of extra credit score
+                extraCreditPoints = (decimal)sumExtraAssignmentScore / 10;
+
+                //Add extra credit points to the sum of regular exam scores
+                decimal finalScore = (decimal)(sumAssignmentScore + extraCreditPoints) / currentAssignmentCount;
+
+
+                if (finalScore >= 97)
                     currentStudentLetterGrade = "A+";
 
-                else if (currentStudentGrade >= 93)
+                else if (finalScore >= 93)
                     currentStudentLetterGrade = "A";
 
-                else if (currentStudentGrade >= 90)
+                else if (finalScore >= 90)
                     currentStudentLetterGrade = "A-";
 
-                else if (currentStudentGrade >= 87)
+                else if (finalScore >= 87)
                     currentStudentLetterGrade = "B+";
 
-                else if (currentStudentGrade >= 83)
+                else if (finalScore >= 83)
                     currentStudentLetterGrade = "B";
 
-                else if (currentStudentGrade >= 80)
+                else if (finalScore >= 80)
                     currentStudentLetterGrade = "B-";
 
-                else if (currentStudentGrade >= 77)
+                else if (finalScore >= 77)
                     currentStudentLetterGrade = "C+";
 
-                else if (currentStudentGrade >= 73)
+                else if (finalScore >= 73)
                     currentStudentLetterGrade = "C";
 
-                else if (currentStudentGrade >= 70)
+                else if (finalScore >= 70)
                     currentStudentLetterGrade = "C-";
 
-                else if (currentStudentGrade >= 67)
+                else if (finalScore >= 67)
                     currentStudentLetterGrade = "D+";
 
-                else if (currentStudentGrade >= 63)
+                else if (finalScore >= 63)
                     currentStudentLetterGrade = "D";
 
-                else if (currentStudentGrade >= 60)
+                else if (finalScore >= 60)
                     currentStudentLetterGrade = "D-";
 
                 else
                     currentStudentLetterGrade = "F";
 
-                Console.WriteLine($"{name}\t\t{currentStudentGrade}\t\t{currentStudentLetterGrade}\t");
+                Console.WriteLine($"{name}\t\t{sumAssignmentScore / (decimal)currentAssignmentCount}\t\t{finalScore:F2}\t\t{currentStudentLetterGrade}\t\t{sumExtraAssignmentScore/extraCreditValues} pts ({(decimal)(sumExtraAssignmentScore*0.1)/currentAssignmentCount})");
 
             }
 
